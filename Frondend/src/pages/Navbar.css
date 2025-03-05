@@ -1,0 +1,91 @@
+/* Navbar.css */
+
+/* General Navbar Styling */
+.navbar {
+    background-color: #1a1a1a; /* Unified dark background */
+    color: #ffffff;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* Logo Styling */
+  .navbar-logo {
+    border: 2px solid #ffffff;
+    padding: 5px;
+  }
+  
+  /* Title and Subtitle Styling */
+  .navbar-title {
+    color: #fbb034; /* Gold accent color for title */
+  }
+  
+  .navbar-subtitle {
+    color: #cccccc; /* Light grey subtitle */
+  }
+  
+  /* Social Media Icons */
+  .navbar-icon {
+    color: #fbb034; /* Gold color for icons */
+  }
+  .navbar-icon:hover {
+    color: #ffffff; /* White on hover */
+    transform: scale(1.1);
+  }
+  
+  /* Navigation Links */
+  .navbar-link {
+    color: #ffffff;
+    text-transform: uppercase;
+  }
+  .navbar-link:hover {
+    color: #fbb034; /* Gold on hover */
+    font-weight: bold;
+  }
+  
+  /* Popup Styles */
+  .popup {
+    border: 1px solid #cccccc;
+  }
+  
+  .popup-title {
+    border-bottom: 2px solid #fbb034; /* Gold accent under title */
+  }
+  
+  .popup-input {
+    font-size: 1rem;
+  }
+  
+  .popup-error {
+    font-weight: bold;
+  }
+  
+  .popup-button-cancel {
+    background-color: #999999;
+  }
+  .popup-button-cancel:hover {
+    background-color: #666666;
+  }
+  
+  .popup-button-submit {
+    background-color: #fbb034;
+  }
+  .popup-button-submit:hover {
+    background-color: #e6a527;
+  }
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+  
+  @keyframes popIn {
+    0% {
+      transform: scale(0);
+      opacity: 0;
+    }
+    80% {
+      transform: scale(1.1);
+      opacity: 1;
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
