@@ -15,7 +15,7 @@ const cors = require("cors"); // Import CORS
 
 dotenv.config();
 
-// Initialize Express
+
 const app = express();
 const PORT = process.env.PORT || 5000;
 
@@ -37,7 +37,7 @@ mongoose.connect(process.env.MONGO_URI, {
 
 
 const corsOptions = {
-    origin: 'http://localhost:5173',
+    origin: 'https://www.harvitools.com/',
     credentials: true, // Allow only requests from this origin
 };
 
