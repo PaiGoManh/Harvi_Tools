@@ -69,10 +69,10 @@ mongoose.connect(process.env.MONGO_URI, {
 
 
 // Use routes
-app.use('/api/messages', messageRoutes);
-app.use('/api/products', productRoutes);
-app.use("/api", adminRoutes);
-app.use("/api/facility", facilityRoutes);
+app.use('/messages', messageRoutes);
+app.use('/products', productRoutes);
+app.use("/admin", adminRoutes);
+app.use("/facility", facilityRoutes);
 
 
 // Start the server

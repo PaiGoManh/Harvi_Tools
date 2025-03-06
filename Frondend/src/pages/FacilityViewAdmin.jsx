@@ -15,7 +15,7 @@ const FacilityViewAdmin = () => {
 
   const fetchFacility = async () => {
     try {
-      const response = await fetch("/api/api/facility", {
+      const response = await fetch("/api/facility", {
         headers: {
           "x-admin-password": "harvi_tools",
         },
@@ -59,7 +59,7 @@ const FacilityViewAdmin = () => {
     if (editForm.image) data.append("image", editForm.image);
 
     try {
-      const response = await fetch(`/api/api/facility/${editFacilityId}`, {
+      const response = await fetch(`/api/facility/${editFacilityId}`, {
         method: "PUT",
         headers: {
           "x-admin-password": "harvi_tools",
@@ -80,7 +80,7 @@ const FacilityViewAdmin = () => {
 
   const handleDelete = async (facilityId) => {
     try {
-      const response = await fetch(`/api/api/facility/${facilityId}`, {
+      const response = await fetch(`/api/facility/${facilityId}`, {
         method: "DELETE",
         headers: {
           "x-admin-password": "harvi_tools",
@@ -130,7 +130,7 @@ const FacilityViewAdmin = () => {
               >
                 <div className="relative h-60 overflow-hidden">
                   <img
-                    src={`/api/uploads/${facility.image}`}
+                    src={`/uploads/${facility.image}`}
                     alt={facility.name}
                     className="w-full h-full object-cover transform transition-all duration-500 group-hover:scale-110"
                   />

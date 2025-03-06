@@ -23,7 +23,7 @@ const Navbar = () => {
   const handlePasswordSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await fetch("/api/api/validate-admin", {
+      const response = await fetch("/api/validate-admin", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -48,7 +48,7 @@ const Navbar = () => {
   };
 
   const handleLogout = async () => {
-    await fetch("/api/api/logout", {
+    await fetch("/api/logout", {
       method: "POST",
       credentials: "include",
     });

@@ -12,7 +12,7 @@ const MessagePage = () => {
 
     const fetchMessages = async () => {
         try {
-            const response = await fetch('/api/api/messages');
+            const response = await fetch('/api/messages');
             if (!response.ok) {
                 throw new Error('Network response was not ok');
             }
@@ -25,7 +25,7 @@ const MessagePage = () => {
 
     const handleDelete = async (id) => {
         try {
-            const response = await fetch(`/api/api/messages/${id}`, {
+            const response = await fetch(`/api/messages/${id}`, {
                 method: 'DELETE',
             });
             if (!response.ok) {
