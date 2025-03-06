@@ -9,15 +9,43 @@ const messageRoutes = require("./Routes/message");
 const facilityRoutes = require("./Routes/facility");
 const path = require('path');
 const cookieParser = require("cookie-parser");
+const { getEnvironmentVariable } = require('./Helper');
 
-
-const cors = require("cors"); // Import CORS
 
 dotenv.config();
 
 
 const app = express();
 const PORT = process.env.PORT || 5000;
+
+const cors = require('cors');
+
+
+const prodOrigins = [
+  getEnvironmentVariable('ORIGIN_1'),
+  getEnvironmentVariable('ORIGIN_2'),
+  getEnvironmentVariable('ORIGIN_3'),
+];
+const devOrigin = ['http://localhost:5173'];
+const allowedOrigins = getEnvironmentVariable('NODE_ENV') === 'production' ? prodOrigins : devOrigin;
+app.use(
+  cors({
+    origin: (origin, callback) => {
+      if (getEnvironmentVariable('NODE_ENV') === 'production') {
+        if (!origin || allowedOrigins.includes(origin)) {
+          callback(null, true);
+        } else {
+          callback(new Error(`${origin} not allowed by cors`));
+        }
+      } else {
+        callback(null, true);
+      }
+    },
+    optionsSuccessStatus: 200,
+    credentials: true,
+    methods: ['GET', 'POST', 'PUT', 'DELETE'],
+  }),
+);
 
 app.use(express.json());
 app.use(bodyParser.json());
@@ -36,13 +64,7 @@ mongoose.connect(process.env.MONGO_URI, {
 });
 
 
-const corsOptions = {
-    origin: 'https://www.harvitools.com/',
-    credentials: true, // Allow only requests from this origin
-};
 
-// Use CORS middleware with specified options
-app.use(cors(corsOptions));
 
 
 // Use routes
