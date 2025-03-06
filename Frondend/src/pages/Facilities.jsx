@@ -69,7 +69,7 @@ const FacilityListPage = () => {
                   <div className="relative h-60 overflow-hidden">
                     {facility.image ? (
                       <img
-                        src={`/uploads/${facility.image}`}
+                        src={`/api/uploads/${facility.image}`}
                         alt={facility.name}
                         className="w-full h-full object-cover transform transition-all duration-500 group-hover:scale-110"
                       />

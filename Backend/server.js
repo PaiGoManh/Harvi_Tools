@@ -51,7 +51,7 @@ mongoose.connect(process.env.MONGO_URI, {
 // Use routes
 app.use('/messages', messageRoutes);
 app.use('/products', productRoutes);
-app.use("/admin", adminRoutes);
+app.use('/admin', adminRoutes);
 app.use("/facility", facilityRoutes);
 
 
