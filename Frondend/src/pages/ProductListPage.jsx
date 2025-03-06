@@ -69,7 +69,7 @@ const ProductListPage = () => {
                   <div className="relative h-60 overflow-hidden">
                     {product.image ? (
                       <img
-                        src={`/uploads/${product.image}`}
+                        src={`/api/uploads/${product.image}`}
                         alt={product.name}
                         className="w-full h-full object-cover transform transition-all duration-500 group-hover:scale-110"
                       />

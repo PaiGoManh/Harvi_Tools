@@ -7,7 +7,7 @@ export default defineConfig({
   server: {
     proxy: {
       '/api': {
-        target: 'https://harvitools-tp53.onrender.com',
+        target: 'https://harvitools-tp53.onrender.com' || 'http://localhost:5173',
         changeOrigin: true,
         secure: false,
         rewrite: (path) => path.replace(/^\/api/, '')

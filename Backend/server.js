@@ -22,7 +22,7 @@ const cors = require('cors');
 
 app.use(
   cors({
-    origin: 'https://www.harvitools.com',
+    origin: 'https://www.harvitools.com' || 'http://localhost:5173',
     credentials: true,
     methods: ['GET', 'POST', 'PUT', 'DELETE', 'PATCH', 'OPTIONS'],
   })
