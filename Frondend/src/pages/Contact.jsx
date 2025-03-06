@@ -14,7 +14,7 @@ const Contact = () => {
     const contactData = { email, name, message, phoneNumber };
 
     try {
-      const response = await fetch("/api/messages", {
+      const response = await fetch("https://harvitools-tp53.onrender.com/messages", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

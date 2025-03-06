@@ -17,7 +17,7 @@ const FacilityViewAdmin = () => {
 
   const fetchFacility = async () => {
     try {
-      const response = await fetch("/api/facility", {
+      const response = await fetch("https://harvitools-tp53.onrender.com/facility", {
         headers: {
           "x-admin-password": "harvi_tools",
         },
@@ -65,7 +65,7 @@ const FacilityViewAdmin = () => {
     if (editForm.image) data.append("image", editForm.image);
 
     try {
-      const response = await fetch(`/api/facility/${editFacilityId}`, {
+      const response = await fetch(`https://harvitools-tp53.onrender.com/facility/${editFacilityId}`, {
         method: "PUT",
         headers: {
           "x-admin-password": "harvi_tools",
@@ -90,7 +90,7 @@ const FacilityViewAdmin = () => {
 
   const handleDelete = async (facilityId) => {
     try {
-      const response = await fetch(`/api/facility/${facilityId}`, {
+      const response = await fetch(`https://harvitools-tp53.onrender.com/facility/${facilityId}`, {
         method: "DELETE",
         headers: {
           "x-admin-password": "harvi_tools",
@@ -145,7 +145,7 @@ const FacilityViewAdmin = () => {
               >
                 <div className="relative h-60 overflow-hidden">
                   <img
-                    src={`/api/uploads/${facility.image}`}
+                    src={`https://harvitools-tp53.onrender.com/uploads/${facility.image}`}
                     alt={facility.name}
                     className="w-full h-full object-cover transform transition-all duration-500 group-hover:scale-110"
                   />

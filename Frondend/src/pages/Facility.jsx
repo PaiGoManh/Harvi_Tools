@@ -25,7 +25,7 @@ const FacilityAddPage = () => {
       data.append("image", formData.image);
     }
 
-    fetch("/api/facility", {
+    fetch("https://harvitools-tp53.onrender.com/facility", {
       method: "POST",
       headers: {
         "x-admin-password": "harvi_tools",

@@ -6,7 +6,7 @@ const FacilityListPage = () => {
 
   const fetchFacilities = async () => {
     try {
-      const response = await fetch("/api/facility");
+      const response = await fetch("https://harvitools-tp53.onrender.com/facility");
       if (!response.ok) throw new Error("Failed to fetch facilities");
       const data = await response.json();
       setFacility(data);
@@ -69,7 +69,7 @@ const FacilityListPage = () => {
                   <div className="relative h-60 overflow-hidden">
                     {facility.image ? (
                       <img
-                        src={`/api/uploads/${facility.image}`}
+                        src={`https://harvitools-tp53.onrender.com/uploads/${facility.image}`}
                         alt={facility.name}
                         className="w-full h-full object-cover transform transition-all duration-500 group-hover:scale-110"
                       />

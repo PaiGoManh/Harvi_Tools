@@ -25,7 +25,7 @@ const ProductAddPage = () => {
       data.append("image", formData.image);
     }
 
-    fetch("/api/products", {
+    fetch("https://harvitools-tp53.onrender.com/products", {
       method: "POST",
       headers: {
         "x-admin-password": "harvi_tools",

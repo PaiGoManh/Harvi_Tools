@@ -17,7 +17,7 @@ const AdminViewPage = () => {
 
   const fetchProducts = async () => {
     try {
-      const response = await fetch("/api/products", {
+      const response = await fetch("https://harvitools-tp53.onrender.com/products", {
         headers: {
           "x-admin-password": "harvi_tools",
         },
@@ -65,7 +65,7 @@ const AdminViewPage = () => {
     if (editForm.image) data.append("image", editForm.image);
 
     try {
-      const response = await fetch(`/api/products/${editProductId}`, {
+      const response = await fetch(`https://harvitools-tp53.onrender.com/products/${editProductId}`, {
         method: "PUT",
         headers: {
           "x-admin-password": "harvi_tools",
@@ -90,7 +90,7 @@ const AdminViewPage = () => {
 
   const handleDelete = async (productId) => {
     try {
-      const response = await fetch(`/api/products/${productId}`, {
+      const response = await fetch(`https://harvitools-tp53.onrender.com/products/${productId}`, {
         method: "DELETE",
         headers: {
           "x-admin-password": "harvi_tools",
@@ -145,7 +145,7 @@ const AdminViewPage = () => {
               >
                 <div className="relative h-60 overflow-hidden">
                   <img
-                    src={`/api/uploads/${product.image}`}
+                    src={`https://harvitools-tp53.onrender.com/uploads/${product.image}`}
                     alt={product.name}
                     className="w-full h-full object-cover transform transition-all duration-500 group-hover:scale-110"
                   />
