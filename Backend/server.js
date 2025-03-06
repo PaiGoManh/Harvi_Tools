@@ -3,13 +3,12 @@ const express = require('express');
 const mongoose = require('mongoose');
 const dotenv = require('dotenv');
 const bodyParser = require('body-parser');
-const productRoutes = require('./Routes/product'); // Import routes
+const productRoutes = require('./Routes/product');
 const adminRoutes = require("./Routes/admin");
 const messageRoutes = require("./Routes/message");
 const facilityRoutes = require("./Routes/facility");
 const path = require('path');
 const cookieParser = require("cookie-parser");
-const { getEnvironmentVariable } = require('./Helper');
 
 
 dotenv.config();
@@ -21,31 +20,12 @@ const PORT = process.env.PORT || 5000;
 const cors = require('cors');
 
 
-const prodOrigins = [
-  getEnvironmentVariable('ORIGIN_1'),
-  getEnvironmentVariable('ORIGIN_2'),
-  getEnvironmentVariable('ORIGIN_3'),
-  getEnvironmentVariable('ORIGIN_4'),
-];
-const devOrigin = ['http://localhost:5173'];
-const allowedOrigins = getEnvironmentVariable('NODE_ENV') === 'production' ? prodOrigins : devOrigin;
 app.use(
   cors({
-    origin: (origin, callback) => {
-      if (getEnvironmentVariable('NODE_ENV') === 'production') {
-        if (!origin || allowedOrigins.includes(origin)) {
-          callback(null, true);
-        } else {
-          callback(new Error(`${origin} not allowed by cors`));
-        }
-      } else {
-        callback(null, true);
-      }
-    },
-    optionsSuccessStatus: 200,
+    origin: 'https://www.harvitools.com',
     credentials: true,
-    methods: ['GET', 'POST', 'PUT', 'DELETE'],
-  }),
+    methods: ['GET', 'POST', 'PUT', 'DELETE', 'PATCH', 'OPTIONS'],
+  })
 );
 
 app.use(express.json());

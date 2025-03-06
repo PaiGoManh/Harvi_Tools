@@ -20,17 +20,12 @@
 const express = require("express");
 const router = express.Router();
 const jwt = require("jsonwebtoken");
-const cors = require("cors");
 const cookieParser = require("cookie-parser");
 require("dotenv").config();
 
 const app = express();
 
 // Enable CORS with credentials support
-app.use(cors({
-  origin: "http://localhost:3000",
-  credentials: true
-}));
 
 // Use cookie-parser middleware
 app.use(cookieParser());
