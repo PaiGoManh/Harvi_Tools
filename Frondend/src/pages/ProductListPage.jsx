@@ -6,7 +6,7 @@ const ProductListPage = () => {
 
   const fetchProducts = async () => {
     try {
-      const response = await fetch("/api/products");
+      const response = await fetch("https://harvitools-tp53.onrender.com/products");
       if (!response.ok) throw new Error("Failed to fetch products");
       const data = await response.json();
       setProducts(data);
@@ -69,7 +69,7 @@ const ProductListPage = () => {
                   <div className="relative h-60 overflow-hidden">
                     {product.image ? (
                       <img
-                        src={`/api/uploads/${product.image}`}
+                        src={`https://harvitools-tp53.onrender.com/uploads/${product.image}`}
                         alt={product.name}
                         className="w-full h-full object-cover transform transition-all duration-500 group-hover:scale-110"
                       />
